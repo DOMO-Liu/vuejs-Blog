@@ -6,9 +6,9 @@ export const post = ({ commit, state }, { article, articleId }) => {
 	if (!Array.isArray(articles)) articles = []
 	if (article) {
 		const uid = 1
-		const { title, content, wordcount, sortId } = article
-		const date = new Date()
-		const year = date.getFullYear()
+		const { title, content, wordcount, sortId, year, date} = article
+		// const date = new Date()
+		// const year = date.getFullYear()
 
 		if (articleId === undefined) {
 			const lastArticle = articles[0]
