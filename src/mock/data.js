@@ -23,13 +23,14 @@ export const mockArticles = (num = 10) => {
 
 	// 生成测试文章，不包含点赞用户和评论
 	const arr = [...Array(num)].forEach((article, index) => {
+		let tcontentTitle = Random.cparagraph(3, 5) + '  '
 		articles.push({
 			uid: 1,
 			articleId: nextArticleId + index,
 			// 随机生成 10 - 20 字的中文标题
 			title: Random.ctitle(10, 20),
 			// 随机生成 3 - 5 个的中文段落
-			content: Random.cparagraph(3, 5),
+			content: tcontentTitle + Random.cparagraph(15, 20),
 			wordcount: Random.cparagraph(3, 5).length,
 			date: new Date(),
 			sortId: '日记本',
