@@ -38,7 +38,7 @@ export const mockArticles = (num = 10) => {
 	})
 
 	// 返回测试文章
-	return articles
+	return articles.reverse()
 }
 
 // 获取指定数量的随机的不重复文章
