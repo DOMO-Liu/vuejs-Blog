@@ -143,11 +143,10 @@ export default {
 		},
 		setArticleId(articleId) {
 			let localArticleId = ls.getItem('articleId')
-			
+				
 			if (articleId !== undefined && !(articleId === localArticleId)) {
 				this.clearData()
 			}
-			
 			this.articleId = articleId
 			this.fillContent(articleId)
 			ls.setItem('articleId', articleId)

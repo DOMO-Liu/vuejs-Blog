@@ -25,6 +25,7 @@ export default {
 		window.addEventListener('scroll', this.handleScroll, true)
 	},
 	methods: {
+		//右侧边栏浮动
 		handleScroll() {
 			if (window.scrollY > 300) {
 				this.$refs.Sidebar.$el.style.position = 'fixed'

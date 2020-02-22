@@ -13,7 +13,7 @@
 							<span>DOMO</span>
 						</i>
 					</a>
-					<router-link v-else to="/vuejs-Blog/dist/friends" v-title="item.title">
+					<router-link v-else to="/vuejs-Blog/dist/riends" v-title="item.title">
 						<i :class="`fa fa-${item.icon} sidebar-nav-fa`">
 							<span>DOMO</span>
 						</i>
@@ -22,7 +22,7 @@
 			</div>
 			<div>
 				<i class="fa fa-heart"></i>
-				正在建设中...
+				正在建设中...(文章随机生成，但是并不影响展示！)
 			</div>
 		</div>
 	</aside>
@@ -48,10 +48,9 @@ export default {
 				icon: 'weixin',
 				title: '加我微信',
 				}
-			],
+			]
 		}
 	}
-	
 }
 </script>
 

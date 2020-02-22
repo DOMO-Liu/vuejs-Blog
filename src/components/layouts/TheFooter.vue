@@ -23,8 +23,8 @@
 
 <script>
 export default {
-	neme:'TheFooter',
-	data () {
+	neme: 'TheFooter',
+	data() {
 		return {
 			description: '本站记录我前端之旅的沿途风景!' ,
 			contacts: [
@@ -48,10 +48,7 @@ export default {
 				paddingRight: '8px',
 			},
 		}
-	},
-	methods:{
-		
-	},
+	}
 }
 </script>
 

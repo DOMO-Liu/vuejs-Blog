@@ -29,16 +29,12 @@ const mutations = {
 		state.articles = articles
 		ls.setItem('articles', articles)
 	},
-	// // 更新搜索值的事件类型
-	// UPDATE_SEARCH_VALUE(state, searchValue) {
-	// 	state.searchValue = searchValue
-	// }
 }
 
 const actions = {
 	//action 的第一个参数是一个与仓库实例具有相同方法和属性的 context 对象，
 	//可以从 context.state 访问仓库的 state，使用 context.commit 提交一个事件类型
-	//登录功能 context.commit,用了解包
+	//登录功能 context.commit,解包
 	login({ commit }, user) {
 		if (user) commit('UPDATE_USER', user)
 		commit('UPDATE_AUTH', true)
@@ -47,7 +43,6 @@ const actions = {
 	},
 	logout({ commit }) {
 		commit('UPDATE_AUTH', false)
-		//同时传了一个 logout 参数，当首页获取到该参数时，就显示一个操作成功的提示。
 		router.push({ name: 'Home'})
 	},
 	// 更新个人信息

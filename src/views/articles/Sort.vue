@@ -19,12 +19,11 @@
 		<h2>
 			<ul class="blog-sort-header" v-for="item in years" :key="item.id">
 				<div class="blog-list-year">{{ item }}</div>
-				<!-- 使用 v-for 指令渲染文章列表 -->
 				<li v-for="article in articlesort[item]" class="blog-list-title" :key="article.id">
 					<div>
 						<div class="point"></div>
 						<span class="meta">
-							<span class="blog-title-timeago">{{ article.date | moment("MM") }}-{{ article.date | moment("D") }}</span>
+							<span class="blog-title-timeago">{{ article.date | moment("MM") }}-{{ article.date | moment("DD") }}</span>
 						</span>
 						<router-link :to="`/vuejs-Blog/dist/articles/${article.articleId}/content`" class="blog-title-title">
 							{{ article.title }}
@@ -38,7 +37,6 @@
 
 <script>
 /* eslint-disable no-unused-vars */
-// 引入 mapState 辅助函数
 import { mapState } from 'vuex'
 
 export default {
@@ -94,7 +92,7 @@ export default {
 		//标签
 		this.creat = creat
 		//年份
-		this.years = years
+		this.years = years.sort().reverse()
 	},
 	methods: {
 		articlesYesrs(item) {

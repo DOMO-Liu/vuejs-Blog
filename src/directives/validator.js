@@ -1,7 +1,6 @@
 //注册时的验证指令
 // 具体的验证逻辑
 function validate(el, modifiers, bindingValue) {
-	
 	bindingValue = bindingValue && typeof bindingValue === 'object' ? bindingValue : {}
 	const value = typeof el.value === 'string' ? el.value.trim() : ''
 	const { title = '该项', error } = bindingValue
@@ -64,7 +63,6 @@ function getErrorElement(el) {
 		parentElement.appendChild(fragment)
 		errorElement = parentElement.querySelector('.help-block')
 	}
-
 	return errorElement
 }
 

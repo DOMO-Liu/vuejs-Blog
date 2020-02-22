@@ -29,7 +29,7 @@ export const post = ({ commit, state }, { article, articleId }) => {
 				sortId,		//标签
 				year,		//年份
 			}) 
-			} else {
+		} else {
 				for (let article of articles) {
 					if (parseInt(article.articleId) === parseInt(articleId)) {
 						article.title = title
@@ -49,7 +49,6 @@ export const post = ({ commit, state }, { article, articleId }) => {
 				break
 			}
 		}
-		
 		commit('UPDATE_ARTICLES', articles)
 		router.push({ name: 'Home'})
 	}

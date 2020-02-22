@@ -98,13 +98,17 @@ export default {
 			this.sortId = sortId
 			content = SimpleMDE.prototype.markdown(emoji.emojify(content, name => name))
 			this.content = content
+			
 			if (this.articlePId !== undefined) {
 				if (typeof content === 'string') {
-					this.content = content.slice(0, content.indexOf('</p>') + 4)
+					let fromindex = content.indexOf('</p>')
+					if (content.indexOf('</p>', fromindex + 4) === -1) {
+						this.content = content.slice(0,20)
+					} else {
+						this.content = content.slice(0, fromindex + 4)
+					}
 				}
 			}
-			
-
 			this.$nextTick(() => {
 				this.$el.querySelectorAll('pre code').forEach((el) => {
 					hljs.highlightBlock(el)

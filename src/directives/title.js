@@ -59,7 +59,6 @@ export default {
 		//声明一个处理器，以根据不同的事件类型传不同的参数
 		const handler = (event) => {
 			if (event.type === 'mouseenter') {
-				// 显示一个提示框
 				showTitle(el, binding.value)
 			} else {
 				// 隐藏一个提示框
@@ -74,7 +73,6 @@ export default {
 
 		// 在 el 元素上添加一个属性，以在其他钩子进行访问
 		el.destroy = () => {
-			// 移除 el 元素上的事件监听
 			events.forEach((event) => {
 				el.removeEventListener(event, handler, false)
 			})

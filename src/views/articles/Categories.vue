@@ -10,7 +10,7 @@
 				<div>
 					<div class="point"></div>
 					<span class="meta">
-						<span class="blog-title-timeago">{{ article.date | moment("MM") }}-{{ article.date | moment("D") }}</span>
+						<span class="blog-title-timeago">{{ article.date | moment("MM") }}-{{ article.date | moment("DD") }}</span>
 					</span>
 					<router-link :to="`/vuejs-Blog/dist/articles/${article.articleId}/content`" class="blog-title-title">
 						{{ article.title }}
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-	/* eslint-disable no-unused-labels */
+/* eslint-disable no-unused-labels */
 export default {
 	data() {
 		return {
@@ -33,7 +33,6 @@ export default {
 	beforeRouteEnter(to, from, next) {
 		next(vm => {
 			vm.setDataByParams(to.params)
-			
 		})
 	},
 	methods: {
@@ -41,7 +40,7 @@ export default {
 			this.sortId = params.sortId
 			this.articles = this.$store.getters.getArticlesBySort(params.sortId)
 		}
-	},
+	}
 }	
 </script>
 

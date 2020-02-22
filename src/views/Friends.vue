@@ -9,7 +9,7 @@
 					有什么话要对我说吗？这里是你畅所欲言的地方，可以咨询，可以交流，可以感叹，可以发飙，但不可以订外卖。
 				</strong>
 				<div>
-					<img src="../assets/weixin.jpg"/>
+					<img class="domoJpg" src="../assets/weixin.jpg"/>
 				</div>
 			</div>
 		</div>

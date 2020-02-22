@@ -1,7 +1,7 @@
 <template>
 	<div v-if="auth" class="navbar-right">
-		<span  class="navbar-create">
-			<a  v-dropdown href="javascript:;">
+		<span class="navbar-create">
+			<a v-dropdown href="javascript:;">
 				<i class="fa fa-plus text-md"></i>
 			</a>
 			<ul class="dropdown-menu">
@@ -13,7 +13,7 @@
 				</li>
 			</ul>
 		</span>
-		<span  class="navbar-login">
+		<span class="navbar-login">
 			<a v-dropdown href="javascript:;">
 				<span v-if="user">
 					<img v-if="user.avatar" :src="user.avatar" class="avatar-topnav">
@@ -45,22 +45,19 @@ import { mapState } from 'vuex'
 
 export default {
 	name:'TheEntry',
-	data () {
-		return {
-
-		}
-	},
+	
 	computed: {
 		...mapState([
 			'auth',
 			'user'
 		])
 	},
+	
 	methods: {
 		logout() {
 			this.$store.dispatch('logout')
 		}
-	}
+	},
 }
 </script>
 

@@ -1,5 +1,4 @@
 // 配置文件
-
 export default [
 	{
 		// 首页路由配置

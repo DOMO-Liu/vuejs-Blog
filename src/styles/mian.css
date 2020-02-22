@@ -35,6 +35,10 @@ li {
 	position: relative;
 }
 
+.navbaractive a{
+	color: #000000!important;
+}
+
 .navbar {
 	position: relative;
 	width: 100%;
@@ -205,8 +209,6 @@ li {
 	margin: 0 auto;
 	padding-bottom: 380px;
 	min-height: 700px;
-	/* background: linear-gradient(rgba(54, 79, 60, 0.25), rgba(73, 101, 77, 0.55)); */
-	/* background: linear-gradient(to right, #8BA989, #C0CFB2); */
 }
 
 /* 左侧文章页面 */
@@ -425,7 +427,6 @@ li {
 /* 放大特效 */
 .scaleup {
 	transition: .3s ease;
-	
 }
 
 .scaleup:hover {
@@ -448,21 +449,19 @@ li {
 }
 /* 弹出框下面的小箭头 */
 .arrow {
-	    position: absolute;
-	    display: block;
-	    /* width: 0; */
-	    /* height: 0; */
-	    border-color: transparent;
-		width: 0;
-		height: 0;
-		margin-left: -11px;
-		border-bottom-width: 0;
-	    border-style: solid;
-		border-top-color: #FFFFFF;
-		/* width: 10px; */
-		border-width: 11px;
-		bottom: -22px;
-		left: 50%;
+	position: absolute;
+	display: block;
+	border-color: transparent;
+	width: 0;
+	height: 0;
+	margin-left: -11px;
+	border-bottom-width: 0;
+	border-style: solid;
+	border-top-color: #FFFFFF;
+	/* width: 10px; */
+	border-width: 11px;
+	bottom: -22px;
+	left: 50%;
 }
 
 /* 消息组件 */
@@ -584,7 +583,7 @@ li {
 
 /* 归档页 */
 .blog-sort {
-	padding-left: 90px;
+	padding-left: 40px;
 }
 
 .blog-header {
@@ -652,12 +651,6 @@ li {
 	width: calc(30% - 15px);
 	background-color: #ffefef;
 	border-radius: 5px;
-}
-
-.sidebar-header {
-	/* position: fixed; */
-	/* width: 30%; */
-	/* position: relative; */
 }
 
 .sidebar-img {
@@ -741,4 +734,45 @@ li {
 	padding: 40px;
 	min-height: 800px;
 	background-color: white;
+}
+
+/* 分页 */
+
+.activeColor {
+	background-color: #97dffd;
+	color: white !important;
+}
+
+.pager-footer {
+	height: 60px;
+	width: 70%;
+	margin-top: 30px;
+	background-color: white;
+	position: relative;
+	border-radius: 5px;
+}
+.pagination {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	align-items: center;
+	padding: 15px 0;
+	text-align: center;
+}
+
+.pagination a{
+	border: 1px solid #97dffd;
+	color: #97dffd;
+	border-radius: 5px;
+	margin: 0 10px;
+	padding: 5px 11px;
+	
+}
+
+
+.domoJpg {
+	width: 40%;
 }

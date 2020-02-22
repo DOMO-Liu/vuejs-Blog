@@ -3,8 +3,9 @@
 		<div class="navbar-top">
 			<div class="navbar-top-site">
 				<ul class="navbar-site-menu">
-					<li v-for="item in navList" :key="item.id">
-						<router-link :to="`/vuejs-Blog/dist/${item.path}`">{{item.title}}</router-link>
+					<li v-for="item in navList" :key="item.id" 
+					:class="{ navbaractive: titleCurrentPage === item.path}">
+						<router-link :to="`/vuejs-Blog/dist/${item.path}`" >{{item.title}}</router-link>
 					</li>
 				</ul>
 				<div class="navbar-right">
@@ -20,21 +21,35 @@
 		</div>
 	</header>
 </template>
-
+ 
 <script>
 import TheEntry from './TheEntry.vue'
 
 export default {
 	neme:'TheHeader',
-	data () {
+	data() {
 		return {
-			navList:[{ title: '首页', path: 'Home' }, { title: '归档', path: 'Sort' }, { title: '关于我', path: 'Friends' }]
-			
+			navList:[
+				{ id: 1, title: '首页', path: '' }, 
+				{ id: 2, title: '归档', path: 'Sort' }, 
+				{ id: 3, title: '关于我', path: 'Friends' },
+			],
+			titleCurrentPage: ''
 		}
 	},
-	components:{
-		TheEntry
+	watch: {
+		'$route'() {
+			let path = this.$route.path.slice(17)
+			if (path !== 'Sort' && path !== 'Friends') {
+				this.titleCurrentPage = ''
+			} else {
+				this.titleCurrentPage = path
+			}
+		}
 	},
+	components: {
+		TheEntry
+	}
 }
 </script>
 
