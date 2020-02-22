@@ -1,9 +1,8 @@
 //封装localStorage
 const ls = localStorage
-// const fs= require('fs') 
 
 export default {
-	setItem(name, value) {
+  setItem(name, value) {
 		ls.setItem(name, JSON.stringify(value))
 	},
 	getItem(name) {
