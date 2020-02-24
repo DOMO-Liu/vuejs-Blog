@@ -1,5 +1,5 @@
 <template>
-	<div class="blog-container content-left">
+	<div class="blog-container creat">
 		<div class="blog-pages">
 			<h2 class="text-center">{{ articleId ? '编辑文章' : '创作文章' }}</h2>
 			<hr>
@@ -7,7 +7,7 @@
 				<div class="form-group creat-header">
 					<div v-dropdown class="creat-sort form-control">
 						{{sortId}}
-						<div class="caret"></div>
+						<div class="caret-a"></div>
 						<div class="dropdown-menu creat-menu">
 							<div @click="sortId = item" v-for="item in creat" :key="item.id" class="creat-sort-item">
 								{{item}}

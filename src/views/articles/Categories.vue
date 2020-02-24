@@ -1,23 +1,23 @@
 <template>
-	<div class="blog-sort content-left blog-container">
-		<div class="categories-header">
-			<h1 class="categories-header-title">
-				{{sortId}}
-			</h1>
+	<div class="main-container categories-header ">
+		<div class="content-left">
+				<h1 class="article-header">
+					{{sortId}}
+				</h1>
+			<ul>
+				<li v-for="article in articles" class="blog-list-title" :key="article.id">
+					<div>
+						<div class="point"></div>
+						<span class="meta">
+							<span class="blog-title-timeago">{{ article.date | moment("MM") }}-{{ article.date | moment("DD") }}</span>
+						</span>
+						<router-link :to="`/vuejs-Blog/dist/articles/${article.articleId}/content`" class="blog-title-title">
+							{{ article.title }}
+						</router-link>
+					</div>
+				</li>
+			</ul>
 		</div>
-		<ul>
-			<li v-for="article in articles" class="blog-list-title" :key="article.id">
-				<div>
-					<div class="point"></div>
-					<span class="meta">
-						<span class="blog-title-timeago">{{ article.date | moment("MM") }}-{{ article.date | moment("DD") }}</span>
-					</span>
-					<router-link :to="`/vuejs-Blog/dist/articles/${article.articleId}/content`" class="blog-title-title">
-						{{ article.title }}
-					</router-link>
-				</div>
-			</li>
-		</ul>
 	</div>
 </template>
 

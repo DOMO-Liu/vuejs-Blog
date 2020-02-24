@@ -20,14 +20,15 @@ export const mockArticles = (num = 10) => {
 
 	let arr = [...Array(num)].forEach((article, index) => {
 		let date = Random.date('yyyy-MM-dd')
+		let content = Random.cparagraph(25, 30)
 		articles.push({
 			uid: 2,
 			articleId: nextArticleId + index,
 			// 随机生成 10 - 20 字的中文标题
-			title: Random.ctitle(10, 20),
+			title: Random.ctitle(7, 12),
 			// 随机生成 3 - 5 个的中文段落
-			content: Random.cparagraph(25),
-			wordcount: Random.cparagraph(25).length,
+			content: content,
+			wordcount: content.length,
 			date: date,
 			sortId: '日记本',
 			year: date.slice(0, 4)

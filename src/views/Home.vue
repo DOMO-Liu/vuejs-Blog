@@ -1,8 +1,6 @@
 <template>
-	<div class="">
-		<div class="" v-for="article in articles" :key="article.articleId">
-			<Content :articlePId="article.articleId"/>
-		</div>
+	<div class="main-home">
+		<Content :articlePId="article.articleId" v-for="article in articles" :key="article.articleId" />
 		<div class="pager-footer">
 			<Pagination :currentPage="currentPage" :total="total" :pageSize="pageSize" :onPageChange="changePage" />
 		</div>

@@ -1,10 +1,9 @@
 <template>
-	<div class="content-left blog-container">
-		<div class="article-header">
-			<h1 class="friendes-header">
+	<div class="main-container friendes-container">
+			<div class="friendes-header">
 				留言板
-			</h1>
-			<div class="friendes-container">
+			</div>
+			<div class="">
 				<strong class="">
 					有什么话要对我说吗？这里是你畅所欲言的地方，可以咨询，可以交流，可以感叹，可以发飙，但不可以订外卖。
 				</strong>
@@ -12,7 +11,6 @@
 					<img class="domoJpg" src="../assets/weixin.jpg"/>
 				</div>
 			</div>
-		</div>
 	</div>
 </template>
 

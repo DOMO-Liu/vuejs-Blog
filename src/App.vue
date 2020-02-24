@@ -1,9 +1,9 @@
-<template>
-  <div id="wrap">
-    <TheHeader />
-	<div id="main-container" class="main-container">
-		<TheSidebar ref="Sidebar"/>
+<template> 
+  <div id="wrap"> 
+    <TheHeader /> 
+	<div id="main">
 		<router-view />
+		<TheSidebar ref="Sidebar" class="sidebar" />
 	</div>
 	<TheFooter />
   </div>
@@ -27,16 +27,10 @@ export default {
 	methods: {
 		//右侧边栏浮动
 		handleScroll() {
-			if (window.scrollY > 300) {
-				this.$refs.Sidebar.$el.style.position = 'fixed'
-				this.$refs.Sidebar.$el.style.top = '10px'
-				this.$refs.Sidebar.$el.style.left = '63%'
-				this.$refs.Sidebar.$el.style.width = '17%'
-			} else {
-				this.$refs.Sidebar.$el.style.position = ''
-				this.$refs.Sidebar.$el.style.top = ''
-				this.$refs.Sidebar.$el.style.left = ''
-				this.$refs.Sidebar.$el.style.width = ''
+			console.log(this.$refs.Sidebar.$el.style.top)
+			if (window.scrollY > 470) {
+				this.$refs.Sidebar.$el.style.top = 100
+				console.log(this.$refs.Sidebar.$el.style.top)
 			}
 		}
 	}
@@ -46,7 +40,8 @@ export default {
 <style lang="scss">
 $fa-font-path: "~font-awesome/fonts/";
 @import "~font-awesome/scss/font-awesome";
-@import url("./styles/mian.css");
+@import url("./styles/mian1.css");
+@import url("./styles/font.css");
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

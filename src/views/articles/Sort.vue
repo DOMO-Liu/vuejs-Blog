@@ -1,37 +1,37 @@
 <template>
-	<div class="blog-sort content-left blog-container">
-		<header class="blog-header">
-			<h1 class="article-header blog-sort-header">
+	<div class="main-container">
+		<div class="content-left sort">
+			<h1 class="article-header blog-sort">
 				归档 
 			</h1>
-			<h2 class="blog-sort-header" ref="head">
-				分类
-				<ul class="blog-all-title ">
-					<li v-for="item in creat" :key="item.id">
-						<a @click="setArticle(item.sort)"  href="javascript:;">
-							{{item.sort}}
-						</a>
-						({{item.num}})
+			<div class="blog-sort-content">
+				<div >
+					<h2 class="sort-title">分类</h2>
+					<ul class="blog-all-title ">
+						<li v-for="item in creat" :key="item.id">
+							<a @click="setArticle(item.sort)"  href="javascript:;">
+								{{item.sort}}
+							</a>
+							({{item.num}})
+						</li>
+					</ul>
+				</div>
+				<ul v-for="item in years" :key="item.id">
+					<h2>{{ item }}</h2>
+					<li v-for="article in articlesort[item]" class="blog-list-title" :key="article.id">
+						<div>
+							<div class="point"></div>
+							<span>
+								<span class="blog-title-timeago">{{ article.date | moment("MM") }}-{{ article.date | moment("DD") }}</span>
+							</span>
+							<router-link :to="`/vuejs-Blog/dist/articles/${article.articleId}/content`" class="blog-title-title">
+								{{ article.title }}
+							</router-link>
+						</div>
 					</li>
 				</ul>
-			</h2>
-		</header>
-		<h2>
-			<ul class="blog-sort-header" v-for="item in years" :key="item.id">
-				<div class="blog-list-year">{{ item }}</div>
-				<li v-for="article in articlesort[item]" class="blog-list-title" :key="article.id">
-					<div>
-						<div class="point"></div>
-						<span class="meta">
-							<span class="blog-title-timeago">{{ article.date | moment("MM") }}-{{ article.date | moment("DD") }}</span>
-						</span>
-						<router-link :to="`/vuejs-Blog/dist/articles/${article.articleId}/content`" class="blog-title-title">
-							{{ article.title }}
-						</router-link>
-					</div>
-				</li>
-			</ul>
-		</h2>
+			</div>
+		</div>
 	</div>
 </template>
 

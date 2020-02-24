@@ -13,14 +13,14 @@ function showTitle(el, title) {
 		//getComputedStyle获取元素上的所有CSS属性对象,包括伪元素
 		const elComputedStyle = window.getComputedStyle(el, null)
 		//getPropertyValue获取获取padding-right属性的值,让弹窗水平居中
-		const rightOffset = parseInt(elComputedStyle.getPropertyValue('padding-right')) || 0
+		const rightOffset = parseInt(elComputedStyle.getPropertyValue('padding')) || 0
 		// const topOffset = parseInt(elComputedStyle.getPropertyValue('padding-top')) || 0
 		const topOffset = 0
 		//visibility 属性规定元素是否可见。默认visible可见,hidden不可见
 		popoverStyle.visibility = 'hidden'
 		popoverStyle.display = 'block'
 		//textContent设置指定节点的文本内容
-		popover.querySelector('.popover-content').textContent = title
+		popover.querySelector('.title-popover-content').textContent = title
 		popoverStyle.left = elRect.left - popover.offsetWidth / 2 + (el.offsetWidth - rightOffset) / 2 + 'px'
 		popoverStyle.top = elRect.top - popover.offsetHeight + topOffset + 'px'
 		popoverStyle.display = 'block'
@@ -34,9 +34,9 @@ function getPopover() {
 
 	if (!popover) {
 		const tpl = `
-			<div class="popover title-popover top fade in" style="position:fixed;">
-				<div class="arrow"></div>
-				<div class="popover-content"></div>
+			<div class="title-popover " style="position:fixed;">
+				<div class="title-arrow"></div>
+				<div class="title-popover-content"></div>
 			</div>
 		`
 			//createRange() 方法创建 Range 对象。插入tpl

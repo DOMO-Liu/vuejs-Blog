@@ -1,47 +1,55 @@
-<template>
-	<div class="blog-container content-left">
-		<div class="post-date">
-			<div class="post-date-month">{{ date | moment("MMM") }}</div>
-			<div class="post-date-day">{{ date | moment("D") }}</div>
-		</div>
-		<div class="post-badge">
-			<a @click="setArticle(sortId)"  href="javascript:;">{{sortId}}</a> 
-		</div>
-		<div class="blog-pages">
-			<div class="post-block">
-				<header class="article-header">
-					<h1 class="article-header-title">{{ title }}</h1>
-					<div class="article-header-meta">
-						<span class="article-header-time">
-							<i class="fa fa-clock-o"></i>发表于 {{ date | moment('L') }}
-						</span>
-						<span class="dividers">
-							•
-						</span>
-						<span class="article-header-wordcount">
-							<i class="fa fa-bar-chart"></i>字数统计 {{ wordcount }}
-						</span>
-					</div>
-				</header>
-				<div class="article-body content-body">
-					<div class="article-meta text-center">
-					</div>
-					<div class="entry-content">
-						<div class="content-body entry-content panel-body ">
-							<div class="markdown-body" v-html="content"></div>
-							
-							<div v-if="articlePId !== undefined" class="post-contens">
-								<router-link :to="`/vuejs-Blog/dist/articles/${articleId}/content`"
-								class="scaleup post-contens-button">
-									阅读全文
-								</router-link>
-							</div>
-							
-							<div v-if="auth && uid === 1 && articlePId === undefined" class="content-body-footer">
-								<div class="actions">
-									<a @click="deleteArticle" class="admin" href="javascript:;"><i class="fa fa-trash-o"></i></a>
-									<a @click="editArticle" class="admin" href="javascript:;"><i class="fa fa-pencil-square-o"></i></a>
+<template> 
+	<div class="main-container"> 
+		<div class="content-left">
+			<div class="post-date">
+				<div class="post-date-month">{{ date | moment("MMM") }}</div>
+				<div class="post-date-day">{{ date | moment("D") }}</div>
+			</div>
+			<div class="post-badge">
+				<a @click="setArticle(sortId)"  href="javascript:;">{{sortId}}</a> 
+			</div>
+			<div class="blog-pages">
+				<div class="post-block">
+					<header class="article-header">
+						<h1 class="article-header-title">{{ title }}</h1>
+						<div class="article-header-meta">
+							<span class="article-header-time">
+								<i class="fa fa-clock-o"></i>发表于 {{ date | moment('L') }}
+							</span>
+							<span class="dividers">
+								•
+							</span>
+							<span class="article-header-wordcount">
+								<i class="fa fa-bar-chart"></i>字数统计 {{ wordcount }}
+							</span>
+						</div>
+					</header>
+					<div class="article-body content-body">
+						<div class="article-meta text-center">
+						</div>
+						<div class="entry-content">
+							<div class="content-body entry-content panel-body ">
+								<div class="markdown-body" v-html="content"></div>
+		
+								<div v-if="articlePId !== undefined" class="post-contens">
+									<router-link :to="`/vuejs-Blog/dist/articles/${articleId}/content`"
+									class="scaleup post-contens-button">
+										阅读全文
+									</router-link>
 								</div>
+								<div v-else>
+									<div class="Appreciate">
+										<router-link style="color: white;" to="/vuejs-Blog/dist/friends" >赞赏</router-link>
+									</div>
+									<hr />
+								</div>
+								<div v-if="auth && articlePId === undefined" class="content-body-footer">
+									<div class="actions">
+										<a @click="deleteArticle" class="admin" href="javascript:;"><i class="fa fa-trash-o"></i></a>
+										<a @click="editArticle" class="admin" href="javascript:;"><i class="fa fa-pencil-square-o"></i></a>
+									</div>
+								</div>
+								
 							</div>
 						</div>
 					</div>

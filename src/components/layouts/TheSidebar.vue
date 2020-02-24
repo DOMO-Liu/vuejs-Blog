@@ -1,28 +1,25 @@
 <template>
-	<aside class="sidebar">
+	<aside class="mian-sidebar">
 		<div class="sidebar-header">
-			<div>
-				<img src="../../assets/card.jpg" class="sidebar-img"/>
-				<p class="sidebar-img-name">DOMO</p>
-				<p class='sidebar-img-description'>你能看到我吗?</p>
-			</div>
+			<img src="../../assets/card.jpg" class="sidebar-img"/>
+			<p class='sidebar-img-description'>你能看到我吗?</p>
 			<div class="sidebar-nav">
 				<span class="scaleup sidebar-nav-list" v-for="item in contacts" :key="item.id">
-					<a v-if="item.link" :href="item.link" target="_blank" v-title="item.title">
+					<a v-if="item.link" :href="item.link" target="_blank" >
 						<i :class="`fa fa-${item.icon} sidebar-nav-fa`">
-							<span>DOMO</span>
+							<span></span>
 						</i>
 					</a>
-					<router-link v-else to="/vuejs-Blog/dist/riends" v-title="item.title">
+					<router-link v-else to="/vuejs-Blog/dist/friends" >
 						<i :class="`fa fa-${item.icon} sidebar-nav-fa`">
-							<span>DOMO</span>
+							<span></span>
 						</i>
 					</router-link>
 				</span>
-			</div>
-			<div>
-				<i class="fa fa-heart"></i>
-				正在建设中...(文章随机生成，但是并不影响展示！)
+				<div class="xxx">
+					<i class="fa fa-heart"></i>
+					正在建设中...(文章随机生成，但是并不影响展示)
+				</div>
 			</div>
 		</div>
 	</aside>
@@ -48,7 +45,7 @@ export default {
 				icon: 'weixin',
 				title: '加我微信',
 				}
-			]
+			],
 		}
 	}
 }
