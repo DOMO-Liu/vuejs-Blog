@@ -21,19 +21,6 @@ export default {
 		TheFooter,
 		TheSidebar
 	},
-	mounted() {
-		window.addEventListener('scroll', this.handleScroll, true)
-	},
-	methods: {
-		//右侧边栏浮动
-		handleScroll() {
-			console.log(this.$refs.Sidebar.$el.style.top)
-			if (window.scrollY > 470) {
-				this.$refs.Sidebar.$el.style.top = 100
-				console.log(this.$refs.Sidebar.$el.style.top)
-			}
-		}
-	}
 }
 </script>
 

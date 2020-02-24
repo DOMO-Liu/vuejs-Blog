@@ -3,6 +3,7 @@ html {
 	color: #000000;
 	width: 100%;
 	height: 100%;
+	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
 	font-size: 16px;
@@ -13,7 +14,7 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	overflow-x: hidden;
+	
 }
 
 * {
@@ -418,7 +419,7 @@ li {
 /* 右边栏 */
 
 .mian-sidebar {
-	/* float: right; */
+	overflow: hidden;
 	position: absolute;
 	width: 28%;
 	height: 31.25rem;
@@ -833,6 +834,7 @@ li {
 }
 
 svg {
+	width: 0.1875rem;
 	fill: #ff8a25;
 	overflow: visible;
 	height: 0.0625rem;
