@@ -169,6 +169,7 @@ li {
 	margin: 0 auto;
 	min-height: 43.75rem;
 	display: flex;
+	
 }
 
 #main:after, #main:before {
@@ -181,6 +182,8 @@ li {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	
+	margin-right: -20rem;
 }
 
 .main-container {
@@ -261,6 +264,10 @@ li {
 	word-break: break-word;
 }
 
+.article-header-title a {
+	color: #444;
+}
+
 .article-header-meta {
 	margin: 0.1875rem 0 1.75rem 0;
 	font-size: 0.75rem;
@@ -282,13 +289,18 @@ li {
 	margin: 0 5px;
 }
 
+.content-body-footer {
+	display: block;
+}
+
 .content-body-footer a {
 	font-size: 20px;
 	padding: 0 10px;
 	color: #000000;
-	float: right
+	float: right;
+	margin-top: 1.25rem;
 }
-
+/* 赞赏 */
 .Appreciate {
 	padding: 0.625rem 0;
 	margin: 1.25rem auto;
@@ -303,6 +315,13 @@ li {
 	font-size: 1.125rem;
 	font-family: "Microsoft Yahei";
 	background: #f44336;
+}
+
+.actions-switch {
+	/* display: inline-flex; */
+	/* justify-content:space-between; */
+	width: 100%;
+	margin-bottom: 1.25rem;
 }
 
 /* 文章中阅读全文的按钮 */
@@ -419,12 +438,21 @@ li {
 /* 右边栏 */
 
 .mian-sidebar {
-	overflow: hidden;
-	position: absolute;
+	/* 粘性定位 */
+	position: sticky;
+	top: 0.625rem;
+	
+	/* overflow: hidden; */
+	/* position: absolute; */
 	width: 28%;
 	height: 31.25rem;
 	right: 0;
 	background-color: white;
+}
+
+.sidebar-header {
+	position: sticky;
+	top:10px;
 }
 
 .sidebar-img {

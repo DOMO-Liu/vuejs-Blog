@@ -10,7 +10,9 @@ Vue.use(Vuex)
 const state = {
 	user: ls.getItem('user'),
 	auth: ls.getItem('auth'),
-	articles: ls.getItem('articles')
+	articles: ls.getItem('articles'),
+	// origin: location.origin
+	// origin:	location.origin.indexOf('github.io') !== -1 ? `${location.origin}/vuejs-Blog/dist` : location.origin 
 }
 
 const mutations = {
