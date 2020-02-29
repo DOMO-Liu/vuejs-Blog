@@ -6,6 +6,7 @@ function validate(el, modifiers, bindingValue) {
 	const { title = '该项', error } = bindingValue
 	let defaultError = ''
 
+	console.log('2',el.value,bindingValue.target)
 	if (modifiers.required && value === '') {
 		defaultError = `${title}不能为空`
 	} else if (bindingValue.target) {
@@ -71,6 +72,7 @@ export default {
 		// 使用解构赋值声明 value = binding.value,  arg = binding.arg,  modifiers = binding.modifiers 
 		//value 绑定值, arg 指令的参数, modifiers 一个修饰符的对象
 		const { value, arg, modifiers } = binding
+		console.log('11',binding)
 		// 如果没传对应的事件名称参数，就默认使用 change 事件, lur 失去焦点
 		const eventType = ['change', 'blur', 'input'].indexOf(arg) !== -1 ? arg : 'change'
 		// 默认处理器，当用户开始输入时，移除错误提示
